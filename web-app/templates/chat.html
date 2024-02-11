@@ -1,0 +1,147 @@
+<html>
+    <head>
+        <title>Safnath Chat</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../static/css/style.css">
+        <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row clearfix">
+                <div class="col-lg-12">
+                    <div class="card chat-app">
+                        <div id="plist" class="people-list">
+                            
+                            <ul class="list-unstyled chat-list mt-2 mb-0">
+                                <li class="clearfix">
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar">
+                                    <div class="about">
+                                        <div class="name">Safnath Panea</div>
+                                        <div class="status"> <i class="fa fa-circle offline"></i> Artificial Intelligence </div>                                            
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="chat">
+                            <div class="chat-header clearfix">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <a href="javascript:void(0);" data-toggle="modal" data-target="#view_info">
+                                            <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="avatar">
+                                        </a>
+                                        <div class="chat-about">
+                                            <h6 class="m-b-0">Moi</h6>
+                                            <small>Utilisateur</small>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="chat-history">
+                                <ul class="m-b-0" id="div-message">
+                                    
+                                </ul>
+                            </div>
+                            <div class="chat-message clearfix">
+                                <div class="input-group mb-0">
+                                    <textarea class="form-control" id="input-message" placeholder="Saisissez le texte..."></textarea>                                 
+                                    <div class="input-group-prepend">
+                                        <button class="input-group-text" id="btn-envoyer"><i class="fa fa-send"></i>Valider</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            
+    </body>
+    <script src="../static/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+        function envoyerMessage(message)
+        {
+            $.ajax(
+                {
+                    type:"POST",
+                    url: "chat",
+                    dataType:"json",
+                    data:{message:message},
+                    success: function(response) 
+                    {
+                        $("#div-message").append(`
+                        <li class="clearfix">
+                            <div class="message-data text-right">
+                                <span class="message-data-time">Safnath</span>
+                                <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar">
+                            </div>
+                            <div class="message other-message float-right">${response.reponse}</div>
+                        </li>`);
+                        scroll_bottom();
+                        animate_text();
+                    },
+                    error: function(response) 
+                    {
+                        $("#div-message").append(`
+                        <li class="clearfix">
+                            <div class="message-data text-right">
+                                <span class="message-data-time">Safnath</span>
+                                <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar">
+                            </div>
+                            <div class="message other-message float-right">Une erreur est survenue</div>
+                        </li>`);
+                        scroll_bottom();
+                    }
+                });
+        }
+
+        $("#btn-envoyer").click(function(){
+            var message = $("#input-message").val();
+            $("#div-message").append(`
+            <li class="clearfix">
+                <div class="message-data">
+                    <span class="message-data-time">Moi</span>
+                </div>
+                <div class="message my-message">${message}</div>                                    
+            </li>`);
+            setTimeout(function(){
+                envoyerMessage(message);
+            }, 500);
+            $("#input-message").val("");
+
+            scroll_bottom();
+        })
+
+        function scroll_bottom(){
+            var div = $("#div-message");
+            div.scrollTop(div[0].scrollHeight);
+        }
+
+        "use strict";
+        
+        function animate_text() 
+        {
+            let delay = 50,
+                delay_start = 0,
+                contents,
+                letters;
+
+            var divMessage = "";
+            document.querySelectorAll(".other-message").forEach(function (elem) {
+                divMessage = elem
+            });
+            contents = divMessage.textContent.trim();
+                divMessage.textContent = "";
+                letters = contents.split("");
+                divMessage.style.visibility = 'visible';
+                letters.forEach(function (letter, index_1) {
+                    setTimeout(function () {
+                        divMessage.textContent += letter;
+                    }, delay_start + delay * index_1);
+                });    
+                delay_start += delay * letters.length;
+        }
+        
+    </script>
+</html>

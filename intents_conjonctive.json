@@ -1,0 +1,103 @@
+{
+  "intents": [
+    {
+      "tag": "defintions",
+      "patterns": [
+        "Qu’est-ce que la conjonctivite ?",
+        "C'est quoi la conjonctivite ?",
+        "Donne-moi la définition de la conjonctivite",
+        "Que signifie conjonctivite ?",
+        "Par quoi entend-on de la conjonctivite",
+        "Explique moi sur la conjonctivite",
+        "La conjonctivite, c'est quoi",
+        "Conjonctivite ?"
+      ],
+      "responses": [
+        "La conjonctivite est l’inflammation de la conjonctive. Normalement, la conjonctive est transparente, elle recouvre la surface de l’œil et l’intérieur des paupières. Son inflammation donne un aspect d’œil rouge"
+      ]
+    },
+    {
+      "tag": "causes",
+      "patterns": [
+        "Quelles les causes de la conjonctivite ?",
+        "Cite-moi les cause la conjonctivite ?",
+        "Causes ?",
+        "Qu'est-ce qui provoque la conjonctivite ?",
+        "La conjonctivite est provoquée par quoi ?"
+      ],
+      "responses": [
+        "- Les virus ; probablement un virus de passage (il n’existe pas de réservoir de virus). C’est une maladie contagieuse. - La pollution atmosphérique (vent, poussière, fumée…)"
+      ]
+    },
+    {
+      "tag": "signes",
+      "patterns": [
+        "Cite les signes de la conjonctivite",
+        "Quels sont les signes de la conjonctivite?",
+        "Donne-moi les signes de la conjonctivite",
+        "Signes",
+        "Eventuels signes de la conjonctivite"
+      ],
+      "responses": [
+        "- La rougeur oculaire, à un œil ou aux deux yeux. - La douleur oculaire sous forme de sensation de grain de sable ou de brûlure. - Les sécrétions oculaires. Le larmoiement réflexe."
+      ]
+    },
+    {
+      "tag": "traitements",
+      "patterns": [
+        "Quel est le traitement ?",
+        "Comment traiter la conjonctivite ?",
+        "La conjonctivite est traitée comment ?",
+        "Traitement ?",
+        "Quel est le type de traitement approprié ?",
+        "Comment guerrir de la conjonctivite ?",
+        "Quel est le chemin de la guerison de la conjonctivite",
+        "Comment soigner la conjonctivite ?"
+      ],
+      "responses": [
+        "- Le traitement n’est pas spécifique car la conjonctivite virale disparaît spontanément avec le temps, le plus souvent en 10 à 15 jours. Mais les membres d’une même famille peuvent tour à tour être atteints car la maladie est contagieuse, il faut redoubler d’effort en matière d’hygiène.  - Un collyre antiseptique peut être instillé et lors d’une surinfection, on appliquera dans l’œil un collyre antibiotique. - Il ne faut pas utiliser le traitement à base de corticoïdes. - Eviter de frotter les yeux car cela aggrave l’inflammation et vous pourriez contaminer votre entourage par l’intermédiaire de vos mains porteuses de virus"
+      ]
+    },
+    {
+      "tag": "preventions",
+      "patterns": [
+        "Comment se prévenir de la conjonctivite ?",
+        "Quels sont les moyens de se prevenir de la conjonctivite ?",
+        "Prévention de la conjonctivite",
+        "Traitement préventif de la conjonctivite.",
+        "Comment éviter d'attraper la conjonctivite",
+        "comment se protéger contre la conjonctivite"
+      ],
+      "responses": [
+        "- Il faut éviter de vous toucher les yeux avec les mains. - Il faut éviter de serrer les main. - Il faut se laver régulièrement les mains à l’eau et au savon. - Il ne faut pas partager le linge de maison, les mouchoirs, les draps avec autrui. - Il faut éviter les produits cosmétiques qui s’appliquent autour des yeux. - Les personnes atteintes doivent rester à la maison et éviter si possible le contact avec les proches."
+      ]
+    },
+    {
+      "tag": "salutation",
+      "patterns": [
+        "Salut",
+        "Bonjour",
+        "Bonsoir"
+      ],
+      "responses": [
+        "Salut, Je peux vous donner des orientation sur la conjonctivite.",
+        "Salut, comment puis-je vous aider sur la conjonctivite ?",
+        "Salut, posez-moi une question sur la conjonctivite ?"
+      ]
+    },
+    {
+      "tag": "ok",
+      "patterns": [
+        "Ok",
+        "c'est bon",
+        "cool",
+        "c'est merveilleux",
+        "d'accord"
+      ],
+      "responses": [
+        "Je vous en prie. Si vous n'avez pas d'autres préocuppation sur la conjonctivite, tapez 'quitter' ou 'sortir' ou 'exit' ou 'quit' ou encore 'arreter' pour arreter le chat",
+        "Ok. Avez-vous d'autres questions sur la conjonctivite ? Sinon tapez 'quitter' ou 'sortir' ou 'exit' ou 'quit' ou encore 'arreter' pour arreter le chat"
+      ]
+    }
+  ]
+}
