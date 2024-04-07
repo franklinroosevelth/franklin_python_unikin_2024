@@ -2,14 +2,15 @@
 import os,random,json,torch
 from model import NeuralNet
 from nltk_utils import bag_of_words, tokenize
+from settings import *
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-with open("intents_conjonctive.json", encoding="utf-8") as json_data:
+with open(f"../{INTENTS_FILENAME}", encoding=ENCODING) as json_data:
     intents = json.load(json_data)
 
 data_dir = os.path.join(os.path.dirname(__file__))
-FILE = os.path.join(data_dir, 'chatdata.pth')
+FILE = os.path.join(data_dir, MODEL_FILENAME)
 data = torch.load(FILE)
 
 input_size = data["input_size"]
@@ -23,7 +24,7 @@ model = NeuralNet(input_size, hidden_size, output_size).to(device)
 model.load_state_dict(model_state)
 model.eval()
 
-bot_name = "iris-NLP"
+bot_name = CHATBOT_NAME
 def get_response(msg):
     sentence = tokenize(msg)
     X = bag_of_words(sentence, all_words)
