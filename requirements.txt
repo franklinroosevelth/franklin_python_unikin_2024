@@ -2,4 +2,5 @@ spacy==3.7.2
 nltk==3.8.1
 torch==2.1.2
 torchvision==0.16.2
-torchaudio
+torchaudio==2.0.2
+flask==3.0.3
